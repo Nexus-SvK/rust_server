@@ -14,6 +14,11 @@ async fn manual_hello() -> impl Responder {
     HttpResponse::Ok().body("Hey there!")
 }
 
+#[post("/me")]
+async fn my_name() -> impl Responder{
+    HttpResponse::Ok().body("Matej Kapral")
+}
+
 #[actix_web::main]
 async fn main() -> std::io::Result<()> {
     HttpServer::new(|| {
